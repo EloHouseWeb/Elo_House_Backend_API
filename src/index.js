@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-//const route = require("./routes/routes.js"); //imported route
+const route = require("./routes/routes.js"); //imported route
 const mongoose = require("mongoose");
 require('dotenv').config()
 const app = express();
@@ -14,7 +14,7 @@ mongoose
   .then(() => console.log("mongoDB Connected"))
   .catch((err) => console.log(err));
 
-//app.use("/", route);
+app.use("/", route);
 
 app.listen(process.env.PORT || 3000, function () {
   console.log("Express app running on port " + (process.env.PORT || 3000));
